@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "IBS.Monitor": {
+    "IBS.MonitorHub": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -19,7 +19,9 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
+              "src/assets",
               {
+                
                 "glob": "**/*",
                 "input": "public"
               }
@@ -56,10 +58,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "IBS.Monitor:build:production"
+              "buildTarget": "IBS.MonitorHub:build:production"
             },
             "development": {
-              "buildTarget": "IBS.Monitor:build:development"
+              "buildTarget": "IBS.MonitorHub:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,10 +78,13 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+               "src/favicon.ico",
+                "src/assets",
+                {
+                  "glob": "**/*.svg",
+                  "input": "node_modules/@fluentui/svg-icons/assets",
+                  "output": "/assets/icons"
+                }
             ],
             "styles": [
               "src/styles.css"
