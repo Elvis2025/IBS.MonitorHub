@@ -1,0 +1,54 @@
+<main>
+  <div class="w-full">
+
+    <button (click)="toggleSidebar()" class="hover:bg-blue-900 p-2 pl-4 pr-4 mt-4 ml-4 w-fit flex justify-start text-white border border-spacing-2 rounded-lg">
+      ☰
+      <h3 class="ml-3 font-bold">Menú</h3>
+    </button>
+  </div>
+  <div
+    [class.hidden]="!isSidebarOpen"
+    class="fixed inset-y-0 left-0 w-1/2 bg-gray-800 text-white transform transition-transform duration-300 z-50"
+    [class.-translate-x-full]="!isSidebarOpen"
+    [class.translate-x-0]="isSidebarOpen"
+    (click)="$event.stopPropagation()" 
+  >
+    <div class="p-4 text-lg font-bold border-b border-gray-600 flex items-center gap-8">
+      <button class="text-lg" 
+              (click)="toggleSidebar()"
+      >
+        <img src="../assets/icons/dismiss_20_regular.svg">
+      </button>
+      <h2>IBS Monitor Hub</h2>
+    </div>
+    <nav class="flex flex-col gap-4 p-4">
+
+     <div class="flex items-center gap-2">
+        <img src="assets/icons/home_20_regular.svg" alt="home" class="w-5 h-5 text-white" />
+        <a routerLink="dashboard" 
+           routerLinkActive="font-bold" 
+           (click)="toggleSidebar()"
+           class="hover:text-gray-300 cursor-pointer">
+        Dashboard
+        </a>
+    </div>
+    <div class="flex items-center gap-2">
+      <img src="../assets/icons/data_area_20_regular.svg" alt="">
+      <a routerLink="pivote" routerLinkActive="font-bold" class="hover:text-gray-300 cursor-pointer"
+         (click)="toggleSidebar()">Pivote</a>
+    </div>
+    <div class="flex items-center gap-2">
+      <img src="../assets/icons/arrow_exit_20_filled.svg" alt="">
+      <a routerLinkActive="font-bold" class="hover:text-gray-300 cursor-pointer"
+         (click)="logOut()">Logout</a>
+    </div>
+    
+    </nav>
+  </div>
+  <div
+    *ngIf="isSidebarOpen"
+    class="fixed inset-0 bg-black bg-opacity-40 z-40"
+    (click)="toggleSidebar()"
+  ></div>
+  <router-outlet></router-outlet>
+</main>

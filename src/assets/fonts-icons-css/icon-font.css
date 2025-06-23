@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'FaSolid';
+    src: url(/src/assets/fonts-icons/fa-solid-900.ttf) format('truetype');
+     font-weight: normal;
+  font-style: normal;
+}
+
+.IconExclamation::before { content: '\21'; font-family: 'FaSolid'; }
+.IconHashtag::before { content: '\23'; font-family: 'FaSolid'; }
+.IconDollarSign::before { content: '\24'; font-family: 'FaSolid'; }
+.IconPercent::before { content: '\25'; font-family: 'FaSolid'; }
+.IconAsterisk::before { content: '\2a'; font-family: 'FaSolid'; }
+.IconPlus::before { content: '\2b'; font-family: 'FaSolid'; }
+.Icon_0::before { content: '\30'; font-family: 'FaSolid'; }
+.Icon_1::before { content: '\31'; font-family: 'FaSolid'; }
+.Icon_2::before { content: '\32'; font-family: 'FaSolid'; }
+.IconHeart::before { content: '\2665'; font-family: 'FaSolid'; }
+.IconStar::before { content: '\2b50'; font-family: 'FaSolid'; }
+.IconUser::before { content: '\f007'; font-family: 'FaSolid'; }
+.IconPlane::before { content: '\f072'; font-family: 'FaSolid'; }
+.IconMusic::before { content: '\f001'; font-family: 'FaSolid'; }
+.IconCamera::before { content: '\f030'; font-family: 'FaSolid'; }

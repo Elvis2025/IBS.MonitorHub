@@ -1,3 +1,6 @@
+@import url(../src/assets/fonts-icons-css/icon-font.css);
+@import url(../src/assets/fonts-icons-css/material-icons-outlined.css);
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+

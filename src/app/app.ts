@@ -1,21 +1,14 @@
-import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { Home } from './feature/layout/home/pages/home';
+import { Component } from '@angular/core';
+// import { Home } from '@angular/router';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,CommonModule],
+  imports: [RouterOutlet],
   templateUrl: './app.html',
-  styleUrls: ['./app.css']
+  styleUrl: './app.css'
 })
-
 export class App {
-  protected title = 'IBS Monitor Hub';
-  isSidebarOpen  = false;
-
-  toggleSidebar(){
-    this.isSidebarOpen  = !this.isSidebarOpen;
-    console.log("ya cambio",this.isSidebarOpen)
-  }
 
 }
