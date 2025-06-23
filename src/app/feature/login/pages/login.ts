@@ -25,10 +25,10 @@ export class Login {
     if(user !== 'ehernandez' || password!== '123qwe'){
       console.log("ver modale")
       this.showModal = true;
-      this.textColor = this.typeMessage.Warning.TextColor;
-      this.backgroundColor = this.typeMessage.Warning.BackgroundColor;
-      this.title = this.typeMessage.Warning.Title;
-      this.icon = this.typeMessage.Warning.Icon;
+      this.textColor = this.typeMessage.Error.TextColor;
+      this.backgroundColor = this.typeMessage.Error.BackgroundColor;
+      this.title = this.typeMessage.Error.Title;
+      this.icon = this.typeMessage.Error.Icon;
       console.log(this.showModal)
       this.errorMessage = 'Credenciales incorrectas.'
       return;
