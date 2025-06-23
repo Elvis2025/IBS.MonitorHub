@@ -6,6 +6,7 @@
 }
 
 .IconExclamation::before { content: '\21'; font-family: 'FaSolid'; }
+.bars::before {content: '\f0c9'; font-family: 'FaSolid'}
 .IconHashtag::before { content: '\23'; font-family: 'FaSolid'; }
 .IconDollarSign::before { content: '\24'; font-family: 'FaSolid'; }
 .IconPercent::before { content: '\25'; font-family: 'FaSolid'; }
