@@ -4,15 +4,24 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DisplayAlert } from '../../../shared/components/display-alert/display-alert';
 import { Constants } from '../../../shared/utils/constants';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+
 @Component({
   standalone: true,
   selector: 'app-login',
-  imports: [CommonModule,RouterOutlet,FormsModule,DisplayAlert],
+  imports: [CommonModule,RouterOutlet,FormsModule,DisplayAlert,TranslateModule],
   templateUrl: './login.html',
   styleUrls: ['./login.css']
 })
 export class Login {
-  constructor(private router:Router ){}
+  currentLang = 'es';
+
+  constructor(private router: Router, private translate: TranslateService) {
+      const savedLang = localStorage.getItem('lang') || 'es';
+      this.currentLang = savedLang;
+      this.translate.setDefaultLang(savedLang);
+      this.translate.use(savedLang);
+    }
   showModal = false;
   typeMessage = Constants.TypeMessage;
   textColor = '';
@@ -43,4 +52,20 @@ export class Login {
     this.showModal = false;
       console.log(this.showModal)
   }
+
+  changeLanguage(event: Event){
+   const selectElement = event.target as HTMLSelectElement;
+    const language = selectElement.value;
+    this.translate.use(language);
+    this.currentLang = language;
+    localStorage.setItem('lang', language);
+    this.showLanguageMenu= false;
+  }
+
+  showLanguageMenu = false;
+
+toggleLanguageMenu() {
+  this.showLanguageMenu = !this.showLanguageMenu;
+}
+
 }

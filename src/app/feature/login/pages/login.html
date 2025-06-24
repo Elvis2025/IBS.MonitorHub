@@ -1,5 +1,5 @@
 <div class="flex items-center justify-center h-screen fixed inset-0 ">
-  <div class="bg-white rounded-xl shadow-lg p-8 w-full max-w-sm">
+  <div class="bg-white rounded-xl shadow-sky-800 shadow-2xl p-8 w-full max-w-sm">
     
     <div class="flex items-center gap-2 mb-6">
       <h2 class="text-xl font-bold text-gray-800 felx justify-center">IBS Monitor Hub</h2>
@@ -21,6 +21,20 @@
 
   </div>
 </div>
+<div class="fixed bottom-3 left-4 ml-5 mb-2 flex items-center gap-2 bg-blue-950 p-0 rounded-lg shadow-lg shadow-sky-800">
+
+  <span class="fas fa-language text-white text-2xl"></span>
+
+  <select 
+    (change)="changeLanguage($event)" 
+    [value]="currentLang"
+    class="absolute inset-0 opacity-0 cursor-pointer"
+  >
+    <option value="es">Español</option>
+    <option value="en">Inglés</option>
+  </select>
+
+</div>
 
 <app-display-alert
   *ngIf="showModal"
@@ -32,7 +46,6 @@
   [textColor]="textColor"
   [title]="title"
 >
-
 </app-display-alert>
 
 <router-outlet></router-outlet>
