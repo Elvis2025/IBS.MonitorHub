@@ -29,22 +29,39 @@
            routerLinkActive="font-bold" 
            (click)="toggleSidebar()"
            class="hover:text-gray-300 cursor-pointer text-2xl">
-        Dashboard
+        {{"DASHBOARD" | translate}}
         </a>
     </div>
     <div class="flex items-center gap-2">
       <i class="fas fa-table p-3 text-3xl"></i>
       <a routerLink="pivote" routerLinkActive="font-bold" class="hover:text-gray-300 cursor-pointer text-2xl"
-         (click)="toggleSidebar()">Pivote Table</a>
+         (click)="toggleSidebar()">{{"PIVOTETABLE" | translate}}</a>
     </div>
     <div class="flex items-center gap-2">
       
-<i class="fas fa-right-from-bracket text-3xl p-3"></i>      
-<a routerLinkActive="font-bold" class="hover:text-gray-300 cursor-pointer text-2xl"
-         (click)="logOut()">Logout</a>
+      <i class="fas fa-right-from-bracket text-3xl p-3"></i>      
+      <a routerLinkActive="font-bold" class="hover:text-gray-300 cursor-pointer text-2xl"
+         (click)="logOut()">{{"LOGOUT" | translate}}</a>
     </div>
     
     </nav>
+    <!-- <label for="language">{{}}</label> -->
+  </div>
+  <div class="fixed  justify-end bottom-4 right-6 flex items-center gap-2 p-0 bg-transparent">
+
+    <label for="language" class="text-center text-white font-bold border-white border-spacing-2">{{currentLanguage.Name}}</label>
+    <span class="fas fa-language bg-blue-950 text-white text-4xl  rounded-r"></span>
+    <select 
+    id="language"
+      (change)="SettingLang.changeLanguage($event)" 
+      [(ngModel)]="currentLanguage"
+      class="absolute inset-0 opacity-0 cursor-pointer text-gray-800"
+    >
+      <option  *ngFor="let item of languages" [value]="item.Code">
+        {{item.Name | translate}}
+      </option>
+      
+    </select>
   </div>
   <div
     *ngIf="isSidebarOpen"

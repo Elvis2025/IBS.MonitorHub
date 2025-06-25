@@ -1,24 +1,31 @@
+import { Language } from './../../../../../node_modules/@ngx-translate/core/lib/translate.service.d';
 import { Component } from '@angular/core';
 import { RouterOutlet,Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DisplayAlert } from '../../../shared/components/display-alert/display-alert';
-import { Constants } from '../../../shared/utils/constants';
+import { SettingLanguage } from '../../../shared/utils/SettingLanguage';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { Constants } from '../../../shared/utils/constants';
 
 @Component({
   standalone: true,
   selector: 'app-login',
-  imports: [CommonModule,RouterOutlet,FormsModule,DisplayAlert,TranslateModule],
+  imports: [CommonModule,
+            RouterOutlet,
+            FormsModule,
+            DisplayAlert,
+            TranslateModule],
   templateUrl: './login.html',
   styleUrls: ['./login.css']
 })
 export class Login {
-  currentLang = 'es';
-
+  currentLanguage = 'es';
+  languages = SettingLanguage.Languages;
+ 
   constructor(private router: Router, private translate: TranslateService) {
       const savedLang = localStorage.getItem('lang') || 'es';
-      this.currentLang = savedLang;
+      this.currentLanguage = savedLang;
       this.translate.setDefaultLang(savedLang);
       this.translate.use(savedLang);
     }
@@ -54,10 +61,12 @@ export class Login {
   }
 
   changeLanguage(event: Event){
-   const selectElement = event.target as HTMLSelectElement;
+    const selectElement = event.target as HTMLSelectElement;
+    console.log(selectElement)
     const language = selectElement.value;
+    console.log(language)
     this.translate.use(language);
-    this.currentLang = language;
+    this.currentLanguage = language;
     localStorage.setItem('lang', language);
     this.showLanguageMenu= false;
   }

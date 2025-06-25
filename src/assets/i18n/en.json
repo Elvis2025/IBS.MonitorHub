@@ -1,5 +1,14 @@
 {
     "LOGOUT": "Log Out",
-    "LOGIN": "Login"
-
+    "LOGIN": "Login",
+    "English": "English",
+    "Spanish": "Spanish",
+    "French": "French",
+    "Portuguese": "Portuguese",
+    "Italian":"Italian",
+    "MAIL": "Mail",
+    "PASSWORD": "Password",
+    "MAILEX": "email@exemple.com",
+    "DASHBOARD": "Dashboard",
+    "PIVOTETABLE": "Pivot Table"
 }

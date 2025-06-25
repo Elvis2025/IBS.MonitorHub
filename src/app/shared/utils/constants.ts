@@ -1,3 +1,4 @@
+import { Language } from './../../../../node_modules/@ngx-translate/core/lib/translate.service.d';
 export class Constants{
     static readonly TypeMessage = {
         Error: {
@@ -25,4 +26,27 @@ export class Constants{
             Title: 'Success'
         }      
     }
+     static readonly DefaultLanguage = 'es'
+    static readonly Languages =[
+        {
+            Code: 'en',
+            Name: 'English'
+        },
+        {
+            Code: 'es',
+            Name: 'Spanish'
+        },
+         {
+            Code: 'fr',
+            Name: 'French'
+        },
+        {
+            Code: 'pt',
+            Name: 'Portuguese'
+        },
+        {
+            Code: 'it',
+            Name: 'Italian'
+        }
+    ]
 }

@@ -1,5 +1,14 @@
 {
     "LOGOUT": "Cerrar Sesión",
-    "LOGIN": "Iniciar Sesión"
-    
+    "LOGIN": "Iniciar Sesión",
+    "English": "Ingles",
+    "Spanish": "Español",
+    "French": "Frances",
+    "Portuguese": "Portugués",
+    "Italian":"Italiano",
+    "MAIL": "Correo",
+    "PASSWORD": "Contraseña",
+    "MAILEX": "correo@ejemplo.com",
+    "DASHBOARD": "Panel de control",
+    "PIVOTETABLE": "Tabla dinámina"
 }
