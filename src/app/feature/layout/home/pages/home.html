@@ -8,7 +8,7 @@
   </div>
   <div
     [class.hidden]="!isSidebarOpen"
-    class="fixed inset-y-0 left-0 w-1/4 bg-gray-800 text-white transform transition-transform duration-300 z-50"
+    class="fixed inset-y-0 left-0 w-2/5 bg-gray-800 text-white transform transition-transform duration-300 z-50"
     [class.-translate-x-full]="!isSidebarOpen"
     [class.translate-x-0]="isSidebarOpen"
     (click)="$event.stopPropagation()" 
@@ -34,7 +34,7 @@
     </div>
     <div class="flex items-center gap-2">
       <i class="fas fa-table p-3 text-3xl"></i>
-      <a routerLink="pivote" routerLinkActive="font-bold" class="hover:text-gray-300 cursor-pointer text-2xl"
+      <a routerLink="pivote" routerLinkActive="font-bold" class="hover:text-gray-300 cursor-pointer text-2xl text-wrap"
          (click)="toggleSidebar()">{{"PIVOTETABLE" | translate}}</a>
     </div>
     <div class="flex items-center gap-2">
