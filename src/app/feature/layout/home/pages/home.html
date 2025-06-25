@@ -45,24 +45,11 @@
     </div>
     
     </nav>
-    <!-- <label for="language">{{}}</label> -->
+  
   </div>
-  <div class="fixed  justify-end bottom-4 right-6 flex items-center gap-2 p-0 bg-transparent">
 
-    <label for="language" class="text-center text-white font-bold border-white border-spacing-2">{{currentLanguage.Name}}</label>
-    <span class="fas fa-language bg-blue-950 text-white text-4xl  rounded-r"></span>
-    <select 
-    id="language"
-      (change)="SettingLang.changeLanguage($event)" 
-      [(ngModel)]="currentLanguage"
-      class="absolute inset-0 opacity-0 cursor-pointer text-gray-800"
-    >
-      <option  *ngFor="let item of languages" [value]="item.Code">
-        {{item.Name | translate}}
-      </option>
-      
-    </select>
-  </div>
+<app-language-selector></app-language-selector>
+
   <div
     *ngIf="isSidebarOpen"
     class="fixed inset-0 bg-black bg-opacity-40 z-40"

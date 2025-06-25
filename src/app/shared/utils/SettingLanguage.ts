@@ -1,17 +1,62 @@
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { Injectable } from '@angular/core';
+import {  TranslateService } from '@ngx-translate/core';
+import { Constants } from './constants';
+
+@Injectable({
+  providedIn: 'root'
+})
 export  class SettingLanguage{
    
-    currentLanguage: any;
-    constructor(private translate: TranslateService){
+  currentLanguage: any;
+  language = Constants.DefaultLanguage;
+  codeLanguage: any;
+  constructor(private translate: TranslateService){}
 
+  setLanguage(){
+      try {
+        
+        var oldLanguageSettled = localStorage.getItem('languageCode') || this.language.Es;
+      
+        if(!Constants.Languages.some(x => x.Code === oldLanguageSettled)) 
+        {
+          this.codeLanguage = this.language.Es;
+          this.saveDefaultLanguage(this.codeLanguage);
+          return;
+        }
+        
+        this.saveDefaultLanguage(oldLanguageSettled)
+      } catch (error) {
+        this.codeLanguage = this.language.Es;
+        this.saveDefaultLanguage(this.language.Es)
+
+      }
+      finally{
+        this.currentLanguage = Constants.Languages.find(x => x.Code === this.codeLanguage);
+      }
+  }
+
+    changeLanguage(language: any){
+      try {
+        if(language === null) return;
+        this.saveDefaultLanguage(language);
+        this.codeLanguage = language;
+      } catch (error) {
+        this.codeLanguage = this.language.Es;
+        console.log(error)
+        this.saveDefaultLanguage(this.codeLanguage)
+      }
+      finally{
+        this.currentLanguage = Constants.Languages.find(x => x.Code === this.codeLanguage);
+      }
     }
 
-    static changeLanguage(language: any){
-    if(language === null) return;
-    const index = (language.target as HTMLSelectElement).value
-    this.currentLanguage = SettingLanguage.Languages.find(x => x.Code === index);
-    this.translate.use(this.currentLanguage.Code);
-    localStorage.setItem('languageCode', this.currentLanguage.Code);
-  }
+    private saveDefaultLanguage(languageCode: any){
+        localStorage.setItem('languageCode',languageCode);
+        this.translate.setDefaultLang(languageCode);
+        this.translate.use(languageCode);
+        this.codeLanguage = languageCode;
+    }
+
+    
 
 }

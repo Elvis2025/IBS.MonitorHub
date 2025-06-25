@@ -5,8 +5,9 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DisplayAlert } from '../../../shared/components/display-alert/display-alert';
 import { SettingLanguage } from '../../../shared/utils/SettingLanguage';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateModule} from '@ngx-translate/core';
 import { Constants } from '../../../shared/utils/constants';
+import { LanguageSelector } from '../../../shared/components/language-selector/language-selector';
 
 @Component({
   standalone: true,
@@ -15,20 +16,18 @@ import { Constants } from '../../../shared/utils/constants';
             RouterOutlet,
             FormsModule,
             DisplayAlert,
-            TranslateModule],
+            TranslateModule,
+            LanguageSelector
+          ],
   templateUrl: './login.html',
   styleUrls: ['./login.css']
 })
 export class Login {
-  currentLanguage = 'es';
-  languages = SettingLanguage.Languages;
+    
+    
  
-  constructor(private router: Router, private translate: TranslateService) {
-      const savedLang = localStorage.getItem('lang') || 'es';
-      this.currentLanguage = savedLang;
-      this.translate.setDefaultLang(savedLang);
-      this.translate.use(savedLang);
-    }
+    constructor(private router: Router) 
+    {}
   showModal = false;
   typeMessage = Constants.TypeMessage;
   textColor = '';
@@ -37,7 +36,10 @@ export class Login {
   icon = '';
   errorMessage = '';
 
+
+
   logIn(user: string,password: string){
+    
     if(user !== 'ehernandez' || password!== '123qwe'){
       console.log("ver modale")
       this.showModal = true;
@@ -55,21 +57,15 @@ export class Login {
   }
 
   handleModalConfirm() {
-    console.log("no ver modale")
     this.showModal = false;
       console.log(this.showModal)
   }
 
-  changeLanguage(event: Event){
-    const selectElement = event.target as HTMLSelectElement;
-    console.log(selectElement)
-    const language = selectElement.value;
-    console.log(language)
-    this.translate.use(language);
-    this.currentLanguage = language;
-    localStorage.setItem('lang', language);
-    this.showLanguageMenu= false;
-  }
+  // changeLanguage(event: Event){
+  //   const codeLanguage = (event.target as HTMLSelectElement).value;
+  //   this.translate.changeLanguage(codeLanguage);
+  //   this.currentLanguage = this.translate.currentLanguage;
+  // }
 
   showLanguageMenu = false;
 

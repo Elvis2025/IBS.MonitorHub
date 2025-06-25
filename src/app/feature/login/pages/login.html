@@ -1,5 +1,5 @@
-<div class="flex items-center justify-center h-screen fixed inset-0 ">
-  <div class="bg-white rounded-xl shadow-sky-800 shadow-2xl p-8 w-full max-w-sm">
+<div class="flex items-center justify-center h-screen fixed inset-0 shadow-sky-800 shadow">
+  <div class="bg-white rounded-xl  p-8 w-full max-w-sm shadow-sky-800 shadow-2xl">
     
     <div class="flex items-center gap-2 mb-6">
       <h2 class="text-xl font-bold text-gray-800 felx justify-center">IBS Monitor Hub</h2>
@@ -21,22 +21,8 @@
 
   </div>
 </div>
-<div class="fixed bottom-3 left-4 ml-5 mb-2 flex items-center gap-2 p-0 bg-transparent">
 
-  <span class="fas fa-language bg-blue-950 text-white text-6xl rounded-lg"></span>
-
-  <select 
-    (change)="changeLanguage($event)" 
-    [(ngModel)]="currentLanguage"
-    class="absolute inset-0 opacity-0 cursor-pointer"
-  >
-    <option  *ngFor="let item of languages" [value]="item.Code">
-      {{item.Name | translate}}
-    </option>
-    
-  </select>
-
-</div>
+<app-language-selector></app-language-selector>
 
 <app-display-alert
   *ngIf="showModal"

@@ -26,7 +26,15 @@ export class Constants{
             Title: 'Success'
         }      
     }
-     static readonly DefaultLanguage = 'es'
+     static readonly DefaultLanguage = {
+        Es: 'es',
+        En: 'en',
+        Fr: 'fr',
+        Pt: 'pt',
+        It: 'it'
+     }
+
+
     static readonly Languages =[
         {
             Code: 'en',
