@@ -70,7 +70,7 @@ export class Login {
   showLanguageMenu = false;
 
 toggleLanguageMenu() {
-  this.showLanguageMenu = !this.showLanguageMenu;
+this.showLanguageMenu = !this.showLanguageMenu;
 }
 
 }
