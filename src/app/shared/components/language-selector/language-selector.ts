@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { SettingLanguage } from '../../utils/SettingLanguage';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule } from '@angular/forms';

@@ -25,9 +25,10 @@
 <app-language-selector></app-language-selector>
 
 <app-display-alert
-  *ngIf="showModal"
-  [message]="errorMessage"
+  *ngIf="msg?.showMessage"
+  [msg.]="msg?.title"
   (accept)="handleModalConfirm()"
+  (cancel)=""
   [showCancel]="false"
   [backgroundColor]="backgroundColor"
   [icon]="icon"
