@@ -5,8 +5,11 @@ export class AlertConfig {
     
   info?: string;
   title?: string;
-  cancel?: string = 'Cancel';
-  accept?: string = 'Ok';
+  cancel?: string;
+  accept?: string;
+  showBtnCancel?: Boolean = false;
+  showBtnAccept?: Boolean = true;
+  setMilliSeconds?: number;
   typeMessage?: MessageType;
   currentMessage?: Message;
   constructor(init?: Partial<AlertConfig>) {

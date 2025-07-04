@@ -1,8 +1,9 @@
 //#region Imports
-import { MessageType } from "../enums/MessageType";
 import { AlertConfig } from "../models/AlertConfig";
+import { Message } from "../models/Message";
 //#endregion
 
+
 export interface IAlertConfig{
-    setAlert(config: AlertConfig): AlertConfig;
+    setAlert(config: AlertConfig): Message;
 }

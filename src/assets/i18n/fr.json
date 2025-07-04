@@ -7,10 +7,16 @@
     "Portuguese": "Portugais",
     "Italian":"Italien",
     "MAIL": "Mail",
+    "OK": "Accepter",
+    "CANCEL": "Annuler",
     "PASSWORD": "Mot de passe",
     "MAILEX": "email@exemple.com",
     "DASHBOARD": "Tableau de bord",
-    "PIVOTETABLE": "Tableau croisé dynamique"
+    "PIVOTETABLE": "Tableau croisé dynamique",
+    "ERROR": "Erreur",
+    "ALERT": "Alerte",
+    "WARNING": "Avertissement",
+    "SUCCESS": "Succès"
     
 
 

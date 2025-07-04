@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PivoteComponent } from './pivote';
+import { PivoteComponent } from './pages/pivote';
 
 describe('Pivote', () => {
   let component: PivoteComponent;

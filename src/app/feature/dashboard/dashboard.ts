@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { SettingLanguage } from '../../../shared/utils/SettingLanguage';
+import { SettingLanguage } from '../../shared/utils/SettingLanguage';
 
 @Component({
   standalone : true,

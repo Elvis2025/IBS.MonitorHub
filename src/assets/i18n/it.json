@@ -7,10 +7,16 @@
     "Portuguese": "Portoghese",
     "Italian":"Italiano",
     "MAIL": "Posta",
+    "OK": "Accettare",
+    "CANCEL": "Cancellare",
     "PASSWORD": "Password",
     "MAILEX": "email@esempio.com",
     "DASHBOARD": "Dashboard",
-    "PIVOTETABLE": "Tabella pivot"
+    "PIVOTETABLE": "Tabella pivot",
+    "ERROR": "Errore",
+    "ALERT": "Avviso",
+    "WARNING": "Avviso",
+    "SUCCESS": "Riuscito"
     
 
 

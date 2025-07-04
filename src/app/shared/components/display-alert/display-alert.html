@@ -1,19 +1,28 @@
 <div class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-40 z-50">
-  <div [ngClass]="msg?.bgColor" class= "pt-4 pb-2 rounded-xl shadow-lg w-full max-w-md flex flex-col">
+  <div [ngClass]="[msgInfo?.bgColor || '',
+                   msgInfo?.borderColor || '',
+                   msgInfo?.shadowColor || '']"
+       class= "pt-4 pb-2 rounded-xl shadow-md w-full max-w-md flex flex-col transition-all duration-300 hover:scale-105">
        
-        <i [ngClass]="msg?.icon" class="fa-solid text-5xl text-center mb-0"></i>
-        <h1 [ngClass]="msg?.textColor" class="text-center font-bold">{{msg?.title}}</h1>
+        <i [ngClass]="msgInfo?.icon" class="fa-solid text-5xl text-center mb-0"></i>
+        <h1 [ngClass]="msgInfo?.textColor" class="text-center font-bold">{{(msgInfo?.title || '') | translate}}</h1>
 
     <!-- <hr class="border-gray-400 mb-4"> -->
 
-    <p class="text-gray-700 flex-grow text-start mb-6 ml-6 mt-6  font-semibold">{{ msg?.title }}</p>
-    <div class="flex justify-center gap-4">
-      <button (click)="msg?.open()" class="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-400">
-        {{ msg?.accept }}
+    <p class="text-gray-700 flex-grow m-6  justify-center text-justify font-semibold">{{ msgInfo?.info }}</p>
+    <div class="flex justify-center gap-8 mb-1">
+      <button *ngIf="msgInfo?.showBtnCancel"
+              (click)="msgInfo?.onCancel()"
+              class="w-32 px-4 py-2 bg-red-400 transition-all duration-300 hover:scale-105 text-red-950 font-semibold rounded-md hover:bg-red-300 hover:text-red-800">
+        {{ (msgInfo?.cancel || 'ca') | translate}}
       </button>
-      <button *ngIf="msg?.showBtnCancel" (click)="msg?.close()" class="px-4 py-2 bg-gray-300 text-black rounded hover:bg-gray-400">
-        {{ msg?.cancel }}
+
+      <button *ngIf="msgInfo?.showBtnAccept"
+              (click)="msgInfo?.onAccept()"
+              class="w-32 px-4 py-2 bg-gray-500 transition-all duration-300 hover:scale-105 text-gray-50 font-semibold rounded-md hover:bg-gray-400 hover:text-gray-200">
+        {{ (msgInfo?.accept || 'OK') | translate }}
       </button>
+
     </div>
   </div>
 </div>

@@ -7,8 +7,14 @@
     "Portuguese": "Português",
     "Italian":"Italiano",
     "MAIL": "Correspondência",
+     "OK": "Aceitar",
+    "CANCEL": "Cancelar",
     "PASSWORD": "Senha",
     "MAILEX": "email@exemplo.com",
     "DASHBOARD": "Painel",
-    "PIVOTETABLE": "Tabela Dinâmica"
+    "PIVOTETABLE": "Tabela Dinâmica",
+    "ERROR": "Erro",
+    "ALERT": "Alerta",
+    "WARNING": "Aviso",
+    "SUCCESS": "Sucesso"
 }

@@ -1,6 +1,7 @@
-<div class="fixed bottom-4 right-6 justify-end flex items-center gap-2 bg-transparent shadow-sky-800 shadow p-2 pt-0.5 pb-0.5 rounded-xl hover:bg-blue-900">
-    <label for="language" class="text-center text-white font-bold border-white border-spacing-2">{{currentLanguage.Name | translate}}</label>
-    <span class="fas fa-language bg-blue-950 text-white text-4xl rounded-r hover:bg-blue-900"></span>
+<div class="fixed bottom-4 right-6 justify-end flex items-center gap-2 bg-transparent shadow-sky-800 shadow p-2 pt-0.5 pb-0.5 rounded-xl transition-all duration-300 hover:scale-105">
+    <label for="language" 
+           class="text-center text-white font-bold border-white border-spacing-2">{{currentLanguage.Name | translate}}</label>
+    <span class="fas fa-language bg-blue-950 text-white text-4xl rounded-r"></span>
     <select id="language" (change)="changeLanguage($event)" class="absolute inset-0 opacity-0 cursor-pointer text-gray-800">
         <option *ngFor="let item of languages" [value]="item.Code">{{item.Name | translate}}</option>
     </select>

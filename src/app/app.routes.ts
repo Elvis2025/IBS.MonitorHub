@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-import { DashboardComponent } from './feature/dashboard/pages/dashboard';
-import { PivoteComponent } from './feature/pivote/pages/pivote'; 
-import { Login } from './feature/login/pages/login';
-import { Home } from './feature/layout/home/pages/home';
+import { DashboardComponent } from './feature/dashboard/dashboard';
+import { PivoteComponent } from './feature/pivote/pivote'; 
+import { Login } from './feature/login/login';
+import { Home } from './feature/layout/home/home';
 
 export const routes: Routes = [ 
     //{path:'',component:Home},
