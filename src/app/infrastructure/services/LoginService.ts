@@ -33,7 +33,7 @@ export class LoginService implements ILoginService {
                     accept: "Si, continuar.",
                     showBtnCancel: true
                 }));
-            
+                
                 this.msg.open();
                 user.msg = this.msg;
                 return Promise.resolve(user);
@@ -43,7 +43,7 @@ export class LoginService implements ILoginService {
             return Promise.resolve(user);
         } catch (error) {
         
-            this.msg = this.msgConfig.displayErrorMessage("Login Error: "+error);
+            this.msg = this.msgConfig.displayErrorMessage("Login "+error);
             this.msg.open();
             user.msg = this.msg;
             return Promise.resolve(user);

@@ -5,21 +5,14 @@ import { Router } from "@angular/router";
     providedIn: 'root'
 })
 //#endregion
+
 export class NavigateTo{
     private static readonly router:Router;
-    constructor(private router: Router) {
-        this.router = router;
-    }
+    constructor(private router: Router) { this.router = router;}
 
+    Login = () => {this.router.navigate(['login'])};
     Dashboard = () => {this.router.navigate(['/dashboard'])};
-    Login = () => {
-                    console.log("entre")
-                    this.router.navigate(['login'])
-                    console.log("44sdww")
-
-
-
-    };
     Pivote = () => {this.router.navigate(['/pivote'])};
+    Setting = () => {this.router.navigate(['/setting'])};
 
 }
