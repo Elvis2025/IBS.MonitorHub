@@ -1,6 +1,5 @@
 //#region  Imports
 import { Injectable } from "@angular/core";
-import { ILoginService } from "../../core/interfaces/ILoginService";
 import { User } from "../../core/models/User";
 import { AlertConfig } from "../../core/models/AlertConfig";
 import { AlertConfigService } from "../../core/services/AlertConfigService";
@@ -8,6 +7,7 @@ import { MessageType } from "../../core/enums/MessageType";
 import { Router } from "@angular/router";
 import { Message } from "../../core/models/Message";
 import { NavigateTo } from "../../shared/utils/NavigateTo";
+import { ILoginService } from "../../core/interfaces/ILoginService";
 @Injectable({
     providedIn: 'root'
 })

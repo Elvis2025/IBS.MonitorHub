@@ -1,0 +1,8 @@
+.gauge {
+  width: 100%;
+  height: 360px; /* ajusta a tu layout */
+}
+.chart { 
+    width: 100%;
+    height: 460px;
+}
