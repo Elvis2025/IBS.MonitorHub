@@ -4,6 +4,7 @@ import { PivoteComponent } from './feature/pivote/pivote';
 import { Login } from './feature/login/login';
 import { Home } from './feature/layout/home/home';
 import { Setting } from './feature/setting/setting';
+import { Transactions } from './feature/transactions/transactions';
 
 export const routes: Routes = [ 
     //{path:'',component:Home},
@@ -17,6 +18,7 @@ export const routes: Routes = [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'pivote', component: PivoteComponent },
       { path: 'setting', component: Setting },
+      { path: 'transactions', component: Transactions },
     ]
   },
 ];

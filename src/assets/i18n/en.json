@@ -16,5 +16,6 @@
     "PASSWORD": "Password",
     "MAILEX": "email@exemple.com",
     "DASHBOARD": "Dashboard",
-    "PIVOTETABLE": "Pivot Table"
+    "PIVOTETABLE": "Pivot Table",
+    "TRANSACTIONS": "Transactions"
 }

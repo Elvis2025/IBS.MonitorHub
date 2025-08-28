@@ -1,8 +1,0 @@
-@font-face {
-    font-family: 'FaSolid2';
-    src: url(/src/assets/fonts-icons/MaterialIconsOutlined-Regular.otf) format('opentype');
-     font-weight: normal;
-  font-style: normal;
-}
-
-.logout::before { content: '\ue9ba'; font-family: 'FaSolid2'; }

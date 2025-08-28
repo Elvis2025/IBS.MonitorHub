@@ -16,5 +16,6 @@
     "ERROR": "Erro",
     "ALERT": "Alerta",
     "WARNING": "Aviso",
-    "SUCCESS": "Sucesso"
+    "SUCCESS": "Sucesso",
+    "TRANSACTIONS": "Transações"
 }

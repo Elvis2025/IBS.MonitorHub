@@ -1,3 +1,5 @@
+import { Message } from "./Message";
+
 export interface MeasureOptions {
   attempts?: number;
   timeoutMs?: number;

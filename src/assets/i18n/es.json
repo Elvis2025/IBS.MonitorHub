@@ -16,5 +16,6 @@
     "PASSWORD": "Contraseña",
     "MAILEX": "correo@ejemplo.com",
     "DASHBOARD": "Panel de control",
-    "PIVOTETABLE": "Tabla dinámina"
+    "PIVOTETABLE": "Tabla dinámina",
+    "TRANSACTIONS": "Transacciones"
 }

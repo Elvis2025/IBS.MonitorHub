@@ -1,8 +1,12 @@
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
-    @for(s of services; track s.name; let i = $index){
+    @for(s of services; track s.id; let i = $index){
         <gauge-card 
                 [name]="s.name" 
-                [value]= s.value>
+                [value]= s.value
+                [service]="s"
+                (ping)="pingUrl($event)"
+                >
+                
         </gauge-card>
     }
 

@@ -1,6 +1,9 @@
-import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { NgxEchartsModule } from 'ngx-echarts';
 import type { EChartsOption } from 'echarts';
+import { Service } from '../../core/models/Service';
+
+
 @Component({
   selector: 'gauge-card',
   imports: [NgxEchartsModule],
@@ -9,6 +12,8 @@ import type { EChartsOption } from 'echarts';
   styleUrl: './gauge-card.css',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
+
+
 export class GaugeCard implements OnChanges{
   @Input() name = 'Servicio';
   @Input() value = 0.5;
@@ -22,10 +27,14 @@ export class GaugeCard implements OnChanges{
   @Input() endAngle   = 0;
   @Input() center: [string, string] = ['50%', '75%'];
   @Input() radius = '100%';
-
+  
+  @Input() service!: Service;
+  @Output() ping = new EventEmitter<Service>();
   option!: EChartsOption;
 
-
+   onPingClick() {
+    this.ping.emit(this.service);
+  }
   ngOnChanges(changes: SimpleChanges): void {
     this.option = this.buildOption(this.value, this.name, this.stops);
   }

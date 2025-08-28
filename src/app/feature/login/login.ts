@@ -19,8 +19,7 @@ import { User } from '../../core/models/User';
             FormsModule,
             DisplayAlert,
             TranslateModule,
-            LanguageSelector
-          ],
+            LanguageSelector],
   templateUrl: './login.html',
   styleUrls: ['./login.css']
 })

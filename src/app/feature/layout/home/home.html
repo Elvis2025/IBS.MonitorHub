@@ -33,6 +33,15 @@
                 <a  routerLinkActive="font-bold"
                     class="text-2xl">{{"PIVOTETABLE" | translate}}</a>
             </div>
+            
+            <div class="flex items-center gap-2 hover:text-gray-300 cursor-pointer hover:bg-gray-600 rounded-lg transition-all duration-300 hover:scale-95" 
+                 (click)="toggleSidebar()"
+                 routerLink="transactions">
+                <i class="fas fa-table p-3 text-3xl"></i>
+                <a  routerLinkActive="font-bold"
+                    class="text-2xl">{{"TRANSACTIONS" | translate}}</a>
+            </div>
+
             <div class="flex items-center gap-2 hover:text-gray-300 cursor-pointer hover:bg-gray-600 rounded-lg transition-all duration-300 hover:scale-95"
                  (click)="logOut()"
                  >
